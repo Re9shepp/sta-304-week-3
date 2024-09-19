@@ -1,0 +1,59 @@
+---
+title: "marriage licence statistics for toronto"
+author: 
+  - Mingjin Zhan
+thanks: "Code and data are available at: LINK."
+date: today
+date-format: long
+abstract: "This is the statistics of marriage licence statistics for toronto; looking for the relationship between data and number"
+format: pdf
+number-sections: true
+bibliography: references.bib
+---
+
+```{r}
+#| include: false
+#| warning: false
+#| message: false
+
+library(tidyverse)
+library(palmerpenguins)
+
+data <- read_csv(here::here("data/analysis_data/analysis_data.csv"))
+
+```
+
+
+# Introduction
+
+You can and should cross-reference sections and sub-sections. We use @citeR and @rohan.
+
+The remainder of this paper is structured as follows. @sec-data....
+
+
+
+# Data {#sec-data}
+
+Some of our data is of penguins (@fig-bills), from @palmerpenguins.
+
+```{r}
+#| label: fig-bills
+#| fig-cap: Bills of penguins
+#| echo: false
+
+data |> 
+  ggplot(aes(x = date, y = marriage_licenses)) +
+  geom_point() +
+  theme_minimal() +
+  labs(x = "date", y = "number of marriage licenses")
+```
+
+From graph, the number of number of marriage licenses stays same for those years, but the number of date reduce from 2020.
+
+
+\newpage
+
+
+# References
+
+
